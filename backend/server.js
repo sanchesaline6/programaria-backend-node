@@ -5,6 +5,7 @@ const database = require('./database')
 
 const app = express()
 const router = express.Router()
+const cors = require('cors')
 
 const Mulher = require('./mulherModel')
 const mulher = {
@@ -38,6 +39,7 @@ let mulheres = []
 database() //realiza conexão com o banco de dados
 
 app.use(express.json())
+app.use(cors())
 app.use(router.get('/', mostraOlaMundo))
 app.use(router.get('/mulher', mostraInfoMulher))
 app.use(router.get('/mulheres', mostraInfoMulheres))

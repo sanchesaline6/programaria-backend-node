@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const uri = 'mongodb+srv://admin:yEcqb3I4Skx4yfKM@programariacluster.nluskpq.mongodb.net/?retryWrites=true&w=majority'
+require('dotenv').config()
+const uri = process.env.MONGO_URL
 
 async function conectaBancoDeDados(){
     try{
